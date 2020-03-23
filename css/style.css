@@ -1,0 +1,269 @@
+* {
+    box-sizing: content-box;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 8px;
+    /* max-height: 600px; */
+    height: 400px;
+    border: 1px solid #00000023;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px 1px #00000011;
+    overflow: auto;
+    line-height: 1;
+    font-size: 14px;
+}
+
+.header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #00000023;
+    background-color: #c3c3c334;
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: blueviolet;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #00000023;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: transparent;
+}
+
+.add-button {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    background-color: blueviolet;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid#fff;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: transparent;
+}
+
+.alert {
+    max-width: 600px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    padding: 15px;
+    max-width: 300px;
+    background-color: #fff;
+    border: 1px solid #00000023;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px 1px #00000011;
+}
+
+.form.show {
+    display: flex;
+}
+
+.label {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blueviolet;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 20px;
+    border: 1px solid #c3c3c334;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.add-button:hover,
+.submit-button:hover {
+    color: blueviolet;
+    background-color: #fff;
+    border-color: blueviolet;
+}
+
+.add-button.disable {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 5px;
+    padding: 10px 10px 15px;
+    border: 1px solid #00000023;
+    border-radius: 15px;
+    box-shadow: 0 1px 3px 1px #00000011;
+}
+
+.row.open {
+    background-color: #bef1be;
+}
+
+.row.in-progress {
+    background-color: #ecf0b2;
+}
+
+.row.done {
+    background-color: #ebebeb;
+    color: grey;
+}
+
+
+
+.cell:not(:nth-child(4)) {
+    padding-right: 20px;
+}
+
+.cell-date {
+    order: 0;
+    flex: 0 1 100%;
+    margin: 0 0 10px 10px;
+}
+
+.cell-date > span {
+    font-size: 14px;
+    color: #00000075;
+    background-color: #d7fff6;
+    border: 1px solid #d7fff6;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.cell-title {
+    order: 2;
+}
+
+.cell-description {
+    order: 3;
+    color: rgba(0, 0, 0, 0.575);
+}
+
+.cell-description::before,
+.cell-description::after {
+    content: '"';
+    display: inline-block;
+    position: relative;
+}
+
+.cell-description::before {
+    left: -3px;
+}
+
+.cell-description::after {
+    left: 3px;
+}
+
+.cell-status {
+    order: 4;
+    margin-left: auto;
+}
+
+.cell-priority {
+    order: 1;
+    text-decoration: underline;
+    font-size: 14px;
+    color: #00000075;
+}
+
+.cell-priority.low {
+    color: #00000075;
+}
+
+.cell-priority.minor {
+    color: green;
+}
+
+.cell-priority.major {
+    color: blue;
+}
+
+.cell-priority.high {
+    color: red;
+}
+
+.cell-buttons {
+    margin-left: 30px;
+    order: 5;
+}
+
+.row-button {
+    background-color: #fff;
+    color: blueviolet;
+    font-weight: 700;
+    padding: 5px 20px;
+    border: 1px solid rgb(213, 168, 255);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.row-button:hover {
+    color: #fff;
+    background-color: blueviolet;
+    border-color: #fff;
+}
+
+.btn-edit {
+    margin-right: 10px;
+}
+
+textarea,
+input {
+    border: 1px solid #a3a3a3;
+    border-radius: 10px;
+    padding: 3px 15px 3px;
+    outline: #a3a3a3;
+}
+
+textarea.error,
+input.error {
+    border-color: red;
+}
+
+textarea.error::placeholder,
+input.error::placeholder {
+    color: red;
+}
